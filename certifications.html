@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications - Ramya SJ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .cert-card {
+            text-align: center;
+        }
+        .cert-img-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--surface-hover), var(--surface-color));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            border: 2px dashed rgba(72, 188, 226, 0.3);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .cert-img-placeholder:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(11, 19, 43, 0.9);
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 0 30px var(--accent-glow);
+        }
+        .close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: var(--text-primary);
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .close:hover {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Ramya SJ</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="fade-in">
+            <h2>My <span style="color: var(--accent-color)">Certifications</span></h2>
+            <p style="text-align: center; margin-bottom: 3rem;">Click on any certification to view it in detail.</p>
+            
+            <div class="grid-3">
+                <div class="card scroll-animate cert-card">
+                    <!-- Placeholder for the actual image. The user will replace src -->
+                    <div class="cert-img-placeholder" onclick="openModal('Placeholder Certification 1')">
+                        <span>[Certificate Image Placeholder]</span>
+                    </div>
+                    <h3>Certification Title 1</h3>
+                    <p>Issuing Organization</p>
+                    <span class="tag">Issued: 2023</span>
+                </div>
+                
+                <div class="card scroll-animate cert-card" style="animation-delay: 0.2s;">
+                    <div class="cert-img-placeholder" onclick="openModal('Placeholder Certification 2')">
+                        <span>[Certificate Image Placeholder]</span>
+                    </div>
+                    <h3>Certification Title 2</h3>
+                    <p>Issuing Organization</p>
+                    <span class="tag">Issued: 2024</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- The Modal -->
+    <div id="certModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div style="text-align: center; color: var(--text-primary); margin-top: 20%;">
+            <h2 id="modalText">Certificate Name</h2>
+            <p>(Actual certificate image will be displayed here when uploaded)</p>
+        </div>
+        <!-- Once real images are added, use an <img> tag here instead of the div above -->
+        <!-- <img class="modal-content" id="img01"> -->
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        function openModal(certName) {
+            document.getElementById('certModal').style.display = "block";
+            document.getElementById('modalText').innerText = certName;
+        }
+
+        function closeModal() {
+            document.getElementById('certModal').style.display = "none";
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            var modal = document.getElementById('certModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

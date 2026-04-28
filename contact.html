@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Ramya SJ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            width: 100%;
+        }
+        .contact-item {
+            background: var(--surface-color);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            font-size: 1.2rem;
+        }
+        .contact-item:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .contact-icon {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Ramya SJ</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="fade-in contact-wrapper">
+            <h2>Get In <span style="color: var(--accent-color)">Touch</span></h2>
+            <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+            
+            <div class="contact-info scroll-animate">
+                <a href="mailto:your.email@example.com" class="contact-item">
+                    <span class="contact-icon">✉</span>
+                    <span>Send me an Email</span>
+                </a>
+                
+                <a href="#" class="contact-item" target="_blank">
+                    <span class="contact-icon">in</span>
+                    <span>LinkedIn Profile</span>
+                </a>
+                
+                <a href="#" class="contact-item" target="_blank">
+                    <span class="contact-icon">&lt;/&gt;</span>
+                    <span>GitHub Profile</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
